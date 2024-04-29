@@ -69,7 +69,6 @@ class FeatureRequest(models.Model):
         default='Reviewed',
     )
 
-
     priority = models.CharField(
         max_length=1,
         choices=[
