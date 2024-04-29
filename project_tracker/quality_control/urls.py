@@ -4,13 +4,19 @@ from quality_control import views
 app_name = 'quality_control'
 
 urlpatterns = [
-    path('', views.index, name = 'index'),
+    # path('', views.index, name = 'index'),
+    # # path('bugs/', views.bug_list, name='bug_list'),
+    # # path('features/', views.feature_list, name='feature_list'),#новый маршрут
+    # # path('bug/<int:bug_id>/', views.bug_detail, name='bug_detail'),
+    # # path('feature/<int:feature_id>/', views.feature_detail, name='feature_detail'),
     # path('bugs/', views.bug_list, name='bug_list'),
-    # path('features/', views.feature_list, name='feature_list'),#новый маршрут
-    # path('bug/<int:bug_id>/', views.bug_detail, name='bug_detail'),
-    # path('feature/<int:feature_id>/', views.feature_detail, name='feature_detail'),
-    path('bugs/', views.bug_list, name='bug_list'),
-    path('features/', views.feature_list, name='feature_list'),
-    path('bugs/<int:bug_id>/', views.bug_detail, name='bug_detail'),
-    path('features/<int:feature_id>/', views.feature_detail, name='feature_detail'),
+    # path('features/', views.feature_list, name='feature_list'),
+    # path('bugs/<int:bug_id>/', views.bug_detail, name='bug_detail'),
+    # path('features/<int:feature_id>/', views.feature_detail, name='feature_detail'),
+
+    path('', views.IndexView.as_view(), name = 'index'),
+    path('bugs/', views.BugsListView.as_view(), name='bug_list'),
+    path('features/', views.FeaturesListView.as_view(), name='feature_list'),
+    path('bugs/<int:bug_id>/', views.BugsDetailView.as_view(), name='bug_detail'),
+    path('features/<int:feature_id>/', views.FeatureDetailView.as_view(), name='feature_detail'),
 ]
