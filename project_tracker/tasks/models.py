@@ -15,6 +15,7 @@ class Task(models.Model):
         ('In_progress', 'В работе'),
         ('Completed', 'Завершена')
     ]
+
     project = models.ForeignKey(
         Project,
         related_name='tasks',

@@ -13,11 +13,13 @@ class BugReport(models.Model):
 
     project = models.ForeignKey(
         Project,
+        related_name='bugs',
         on_delete=models.CASCADE
     )
 
     task = models.ForeignKey(
         Task,
+        related_name='bugs',
         on_delete=models.SET_NULL,
         null=True,
         blank=True
@@ -42,6 +44,10 @@ class BugReport(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
 
 class FeatureRequest(models.Model):
     STATUS_CHOICES =[
