@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
     <h1>Список багов</h1>
+
+    <!-- Ссылка на создание нового проекта -->
+    <p><a href="{% url 'quality_control:create_bug' %}">Рассказать о баге </a></p>
+
+
     <ul>
         {% for bug in bug_list %}
             <li><a href="{% url 'quality_control:bug_detail' bug.id %}">{{bug.title}}</a></li>
