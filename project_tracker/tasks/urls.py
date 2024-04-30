@@ -1,11 +1,11 @@
 from django.urls import path, include
-from tasks import views
+from . import views
 
 
 app_name = 'tasks'
 
 urlpatterns = [
-    path('', views.index),
+    path('', views.index, name = 'index'),
     #path('quality_control/', include('quality_control.urls', namespace='quality_control')),
     # path('another/', views.another_page, name='another_page'),#новый маршрут
     path('projects/', views.projects_list, name='projects_list'),
